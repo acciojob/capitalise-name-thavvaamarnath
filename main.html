@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    Enter your name: <input type="text" id="fname">
-	
-	<script type="text/javascript" src="./script.js">
-	</script>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uppercase Input Field</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+  }
+  input[type=text] {
+    width: 100%;
+    max-width: 350px;
+    padding: 8px 12px;
+    font-size: 1.1em;
+    border: 2px solid #007acc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  input[type=text]:focus {
+    border-color: #005a9e;
+    outline: none;
+  }
+</style>
+</head>
+<body>
+
+<label for="fname">Enter your name:</label>
+<input type="text" id="fname" name="fname" maxlength="100" placeholder="Type your name here" />
+
+<script>
+  const input = document.getElementById('fname');
+  input.addEventListener('blur', () => {
+    input.value = input.value.toUpperCase();
+  });
+</script>
+
+</body>
 </html>
